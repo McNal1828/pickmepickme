@@ -1,13 +1,8 @@
 import sqlite3, { Database } from 'sqlite3';
+import connectDB from './connectdb';
 
 export default function init() {
-	const db = new sqlite3.Database('util/db.sqlite', (err) => {
-		if (err) {
-			console.error(err.message);
-		}
-		console.log('Connected to the test database.');
-	});
-	db;
+	const db = connectDB();
 	initTable(db);
 }
 
