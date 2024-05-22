@@ -6,7 +6,7 @@ import SeesionChoice from './sessionChoice.js';
 export default function Home() {
 	// init();
 	const cookiestore = cookies();
-	const session_id = cookiestore?.get('session_id').value;
+	const session_id = cookiestore.get('session_id')?.value;
 	return (
 		<>
 			<div>

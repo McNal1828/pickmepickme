@@ -32,6 +32,7 @@ export default function SeesionChoice({ session_id }) {
 						fetch('api/session', { method: 'POST' })
 							.then((res) => res.json())
 							.then((data) => {
+								console.log(data);
 								router.push('host');
 							});
 					}}
@@ -50,14 +51,35 @@ export default function SeesionChoice({ session_id }) {
 						}).then((res) => {
 							if (res.ok) {
 								console.log('session exists');
-								router.push('host');
+								router.push('participants');
 							} else {
 								alert('존재하지 않는 세션입니다.');
 							}
 						});
 					}}
 				>
-					세션입장
+					세션참여
+				</button>
+				<button
+					onClick={(e) => {
+						fetch('/api/session', {
+							method: 'PATCH',
+							cache: 'no-store',
+							body: JSON.stringify({ sessionid }),
+							headers: {
+								'Content-Type': 'application/json',
+							},
+						}).then((res) => {
+							if (res.ok) {
+								console.log('session exists');
+								router.push('client');
+							} else {
+								alert('존재하지 않는 세션입니다.');
+							}
+						});
+					}}
+				>
+					세션보기
 				</button>
 			</div>
 		</div>
