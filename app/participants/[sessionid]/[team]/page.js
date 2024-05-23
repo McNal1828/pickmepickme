@@ -20,7 +20,7 @@ export default function Home({ params }) {
 	console.log(choose);
 	useEffect(() => {
 		// WebSocket 연결 설정
-		const ws = new WebSocket('ws://localhost:3000/api/ws');
+		const ws = new WebSocket(`${process.env.NEXT_PUBLIC_SQLITEBACK_WS}/api/ws`);
 		ws.onopen = () => {
 			console.log('WebSocket connected');
 			ws.send(JSON.stringify({ type: 'join', room: sessionid }));
