@@ -6,7 +6,7 @@
 		"dev": "next dev",
 		"devn": "node server.js",
 		"build": "next build",
-		"start": "next start",
+		"start": "next start -p 3101",
 		"startn": "NODE_ENV=production node server.js",
 		"lint": "next lint"
 	},

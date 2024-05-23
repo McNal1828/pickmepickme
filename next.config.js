@@ -4,7 +4,7 @@ const nextConfig = {
 		return [
 			{
 				source: '/api/:path*',
-				destination: `${process.env.SQLITEBACK}/:path*`,
+				destination: `${process.env.SQLITEBACK}/api/:path*`,
 			},
 		];
 	},
