@@ -1,7 +1,7 @@
 export default function Layout({ children }) {
 	return (
 		<>
-			<h1>보기</h1>
+			<h1>관전페이지</h1>
 			{children}
 		</>
 	);

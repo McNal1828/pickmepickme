@@ -37,10 +37,12 @@ function initTable(db) {
 					`CREATE TABLE IF NOT EXISTS item(
                     id text,
                     idx integer,
+					uuid text,
                     name text,
                     picture_url text,
                     intruduce text,
                     detail text,
+					team: integer,
                     primary key (id, idx),
                     FOREIGN KEY (id) REFERENCES session(id)
                 )`,
@@ -56,7 +58,6 @@ function initTable(db) {
 					`CREATE TABLE IF NOT EXISTS team(
                     id text,
                     teamidx number,
-                    items text,
                     primary key (id, teamidx),
                     FOREIGN KEY (id) REFERENCES session(id)
                 )`,

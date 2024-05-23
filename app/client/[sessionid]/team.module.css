@@ -1,0 +1,21 @@
+.limg {
+	position: relative;
+	min-width: 30px;
+	height: 30px;
+	margin-right: 20px;
+}
+.list {
+	display: flex;
+}
+.name {
+	display: -webkit-box;
+	max-width: 185px;
+	min-width: 50px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	/* white-space: nowrap; */
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 2;
+	margin-left: 20px !important;
+	margin-bottom: 0px !important;
+}
