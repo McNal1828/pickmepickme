@@ -47,7 +47,7 @@ export default function SeesionChoice({ session_id }) {
 							}).then((res) => {
 								if (res.ok) {
 									console.log('session exists');
-									router.push('participants');
+									router.push(`participants/${sessionid}`);
 								} else {
 									alert('존재하지 않는 세션입니다.');
 								}

@@ -19,7 +19,7 @@ export default function Home({ params }) {
 	const [curstate, setcurstate] = useState('');
 	useEffect(() => {
 		// WebSocket 연결 설정
-		const ws = new WebSocket(`${NEXT_PUBLIC_SQLITEBACK_WS}/api/ws`);
+		const ws = new WebSocket(`${process.env.NEXT_PUBLIC_SQLITEBACK_WS}/api/ws`);
 		ws.onopen = () => {
 			console.log('WebSocket connected');
 			ws.send(JSON.stringify({ type: 'join', room: sessionid }));
